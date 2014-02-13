@@ -1,0 +1,82 @@
+<br>
+<iframe class="github-btn"
+        src="http://ghbtns.com/github-btn.html?user=bastifantasti&repo=hueCinema&type=watch&count=true"
+        allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+<iframe class="github-btn"
+        src="http://ghbtns.com/github-btn.html?user=bastifantasti&repo=hueCinema&type=fork&count=true"
+        allowtransparency="true" frameborder="0" scrolling="0" width="102px" height="20px"></iframe>
+<h1 class="margin-base-vertical">Philips HUE :: HomeCinema</h1>
+<p>Record your TV with a WebCam and use your HUE as an Ambilight</p>
+<div class="row">
+<div class="col-lg-8 ">
+    <h4>#1 your Bridge-IP@home </h4>
+    <span style="font-size: 11px;">(inkl. your developer-Path like: "http://your-ip/api/newdeveloper/")</span>
+    <div class="input-group">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-globe"></span></span>
+        <input id="bridgeurl" type="url" class="form-control" placeholder="http://192.168.1.XXX/api/newdeveloper/">
+
+    </div>
+    <a class="btn  btn-info btn-xs" id="saveIP" ng-click="saveIP()">Save</a>
+
+</div>
+</div>
+        <div class="row">
+<div class="col-lg-5">
+    <h3>#2 Get Hue State</h3>
+
+    <p>Get the current State of your Lights @ home.</p>
+
+    <p><a class="btn  btn-info" id="getHueState" ng-click="getHueList()">Get Hue &raquo;</a></p>
+    <ul id="hue-at-home">
+        <li ng-repeat="(key, light) in lights"><label for="check_{{light.name}}">[{{key}}]: {{light.name}}</label>
+            <input type="checkbox" id="check_{{light.name}}" name="huelisthome" value="{{key}}" checked><br>
+            <label for="slider_{{light.name}}" style="font-size: 10px; font-weight: normal">frequenz [{{light.slide}}
+                ms]</label>
+            <input id="slider_{{light.name}}" ng-model="light.slide" type="range" class="" min="0" max="6000">
+        </li>
+
+    </ul>
+    <div id="hueState"></div>
+    <div id="info"></div>
+</div>
+<div class="col-lg-5 col-lg-offset-1">
+    <h3>#3 Cinema</h3>
+
+    <p>Record your TV with a WebCam and use your HUE as an Ambilight</p>
+
+    <p><a class="btn btn-danger disabled" id="btn-rec" ng-click="record()">Record Screen</a></p>
+    <video id="v" width="320" height="240" autoplay></video>
+    <canvas id="mycanvas" width="320" height="240"></canvas>
+</div>
+        </div>
+        <!--
+<div class="col-lg-4 ">
+    <h3>Get Color From an Image</h3>
+    <img id="meinBild" src="images/orange.jpeg" width="200" height="200">
+    <canvas id="canvas" width="200" height="200"></canvas>
+    <p><a class="btn btn-primary" id="btn-push-img">Push Image &raquo;</a></p>
+</div>-->
+
+
+<div class="margin-base-vertical">
+    <small class="text-muted">Background picture by <a href="http://www.flickr.com/photos/mtndrew/">Drew Christy
+        @flickr</a>.
+    </small>
+    <p>
+        <iframe class="github-btn"
+                src="http://ghbtns.com/github-btn.html?user=bastifantasti&repo=hueCinema&type=watch&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+        <iframe class="github-btn"
+                src="http://ghbtns.com/github-btn.html?user=bastifantasti&repo=hueCinema&type=fork&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0" width="102px" height="20px"></iframe>
+        <br/>
+        <a href="https://twitter.com/bastifantasti" class="twitter-follow-button" data-link-color="#0069D6"
+           data-show-count="true">Follow @bastifantasti</a>
+        <a href="https://twitter.com/share" class="twitter-share-button"
+           data-url="https://github.com/bastifantasti/hueCinema" data-count="horizontal" data-via="bastifantasti"
+           data-related="bastifantasti:Creator of SMB-Pass">Tweet</a>
+    </p>
+</div>
+        <footer>
+            <p>&copy; Sebastian Felix Schwarz 2013</p>
+        </footer>
